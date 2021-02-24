@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
           box.vm.box = boxconfig[:box_name]
           box.vm.host_name = boxname.to_s
 
-          box.vm.network "forwarded_port", guest: 8080, host: 8080
+          #box.vm.network "forwarded_port", guest: 8080, host: 8080
 
           box.vm.network "private_network", ip: boxconfig[:ip_addr]
 
@@ -33,13 +33,13 @@ Vagrant.configure("2") do |config|
             sed -i '65s/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
             systemctl restart sshd
           SHELL
-=begin 
+
           box.vm.provision "ansible" do |ansible|
             ansible.verbose = "vv"
             ansible.playbook = "provision/playbook.yml"
             ansible.become = "true"
           end
-=end
+
       end
   end
 end
