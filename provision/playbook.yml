@@ -1,6 +1,8 @@
 ---
-- hosts: all
+- hosts: host1
   become: true
   gather_facts: false
+  vars:
+   nginx_port: 8080
   roles:
    - otus-nginx
