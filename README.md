@@ -10,14 +10,15 @@ git clone https://github.com/ProkofevVA/otus_17_ansible.git && cd otus_17_ansibl
 vagrant up
 ```
 
-## Конфигурация
+# Конфигурация
 
-# Доступные переменные
+### Доступные переменные
 
 ```
 nginx_port
 ```
 Порт, который будет слушать nginx
+
 Пример: `nginx_port = 8080`
 
 # Проверка
